@@ -1,0 +1,26 @@
+{
+    "name": "softarch/skeleton",
+    "description": "Skeleton For Package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shakil Ahmmed",
+            "email": "shakilfci461@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "SoftArch\\PrProject\\Skeleton\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SoftArch\\PrProject\\Skeleton\\ServiceProvider"
+            ]
+        }
+    }
+}

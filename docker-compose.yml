@@ -1,0 +1,65 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: Shakil
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: pr-project
+    container_name: pr-project-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - database
+    links:
+      - database
+    networks:
+      - pr-project-network
+  nginx:
+    image: nginx:alpine
+    container_name: pr-project-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www/html
+      - ./.docker/nginx:/etc/nginx/conf.d/
+    networks:
+      - pr-project-network
+  database:
+    image: mysql:5.7
+    container_name: pr-project-database
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - /.docker/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - pr-project-network
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pr-project-phpmyadmin
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - database
+    ports:
+      - 8082:80
+    environment:
+      PMA_HOST: database
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - pr-project-network
+networks:
+  pr-project-network:
+    driver: bridge
+
