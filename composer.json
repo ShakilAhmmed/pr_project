@@ -14,6 +14,10 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/ShakilAhmmed/skeleton_vcs.git"
         }
     ],
     "require": {
@@ -23,7 +27,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "softarch/skeleton": "@dev"
+        "softarch/skeleton": "@dev",
+        "softarch/skeleton_vcs": "@dev"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

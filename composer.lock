@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6300859412af36726abc5842c1b50b0f",
+    "content-hash": "ac1c01d022529785ba8e5f00f3e00db9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -894,16 +894,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.20.1",
+            "version": "v8.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b5d8573ab16027867eaa1ac148893833434f9b02"
+                "reference": "a61cab167c35f465a923737ee6e6fb99cd5fde88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b5d8573ab16027867eaa1ac148893833434f9b02",
-                "reference": "b5d8573ab16027867eaa1ac148893833434f9b02",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a61cab167c35f465a923737ee6e6fb99cd5fde88",
+                "reference": "a61cab167c35f465a923737ee6e6fb99cd5fde88",
                 "shasum": ""
             },
             "require": {
@@ -1057,7 +1057,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-12-22T21:21:19+00:00"
+            "time": "2021-01-05T15:43:10+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2357,9 +2357,9 @@
             "dist": {
                 "type": "path",
                 "url": "packages/skeleton",
-                "reference": "f3aad242b80e9932e87110a776af59a03cf8613c"
+                "reference": "963847e5a48bde72fedab116b11f9c1bdc2febd3"
             },
-            "type": "library,project",
+            "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
@@ -2386,6 +2386,50 @@
                 "symlink": true,
                 "relative": true
             }
+        },
+        {
+            "name": "softarch/skeleton_vcs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ShakilAhmmed/skeleton_vcs.git",
+                "reference": "8d90f3c61b8aef6388177384c48e2db6efab7a7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ShakilAhmmed/skeleton_vcs/zipball/8d90f3c61b8aef6388177384c48e2db6efab7a7d",
+                "reference": "8d90f3c61b8aef6388177384c48e2db6efab7a7d",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SoftArch\\PrProject\\SkeletonVcs\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SoftArch\\PrProject\\SkeletonVcs\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shakil Ahmmed",
+                    "email": "shakilfci461@gmail.com"
+                }
+            ],
+            "description": "Skeleton For Package",
+            "support": {
+                "source": "https://github.com/ShakilAhmmed/skeleton_vcs/tree/master",
+                "issues": "https://github.com/ShakilAhmmed/skeleton_vcs/issues"
+            },
+            "time": "2021-01-06T19:12:24+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7377,7 +7421,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "softarch/skeleton": 20
+        "softarch/skeleton": 20,
+        "softarch/skeleton_vcs": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
