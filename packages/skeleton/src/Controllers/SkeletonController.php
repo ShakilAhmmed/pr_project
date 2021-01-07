@@ -3,18 +3,23 @@
 namespace SoftArch\PrProject\Skeleton\Controllers;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use SoftArch\PrProject\Skeleton\Models\SettingsModel;
 
 class SkeletonController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        return view("skeleton::forms.skeleton");
+        $settings = SettingsModel::all();
+        return view("skeleton::pages.skeleton_list", [
+            "settings" => $settings
+        ]);
     }
 
     /**
